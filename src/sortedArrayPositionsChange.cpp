@@ -15,20 +15,16 @@ NOTES:
 
 void * sortedArrayPositionsChange(int *Arr, int len)
 {
-        int i,temp,first,counti;
+        int i,temp,first,counti=0;
 	if(Arr==NULL||len<=0)
         return NULL;
         else
             {
                 for(i=0;i<len-1;i++)
                 {
+
                     if(Arr[i]>Arr[i+1])
                     {
-                        if(counti!=1)
-                        {
-                            first=i;
-                            counti++;
-                        }
                         if(counti==1)
                         {
                             temp=Arr[first];
@@ -36,6 +32,12 @@ void * sortedArrayPositionsChange(int *Arr, int len)
                             Arr[i+1]=temp;
                            break;
                         }
+                        if(counti!=1)
+                        {
+                            first=i;
+                            counti++;
+                        }
+
 
 
                     }
