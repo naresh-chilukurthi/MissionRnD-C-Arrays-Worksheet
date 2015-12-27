@@ -30,6 +30,7 @@ void * sortedArrayPositionsChange(int *Arr, int len)
                             temp=Arr[first];
                             Arr[first]=Arr[i+1];
                             Arr[i+1]=temp;
+
                            break;
                         }
                         if(counti!=1)
@@ -37,11 +38,9 @@ void * sortedArrayPositionsChange(int *Arr, int len)
                             first=i;
                             counti++;
                         }
-
-
-
                     }
                 }
+                return Arr;
             }
 
 }

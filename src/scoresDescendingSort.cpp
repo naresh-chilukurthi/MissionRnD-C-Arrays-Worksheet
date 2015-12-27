@@ -14,12 +14,37 @@ NOTES:
 */
 
 #include <stdio.h>
-
 struct student {
 	char name[10];
 	int score;
 };
-
+void mystrcpy(char *dst, const char *src)
+{
+while(*dst++=*src++);
+}
 void * scoresDescendingSort(struct student *students, int len) {
-	return NULL;
+	int i,j;struct student temp;
+	if(students==NULL||len<=0)
+        return NULL;
+    else
+    {
+        for(i=0;i<len;i++)
+        {
+            for(j=0;j<len-i-1;j++)
+            {
+                if(students[j].score<students[j+1].score)
+                {
+                    mystrcpy(temp.name,students[j].name);
+                    //while(*(temp.name)++=*(students[j].name)++);
+                    temp.score =students[j].score;
+                    //student[j].name=(char*)malloc(sizeof(student[j+1].name)+1)
+                    mystrcpy((students[j].name),(students[j+1].name));
+                    students[j].score= students[j+1].score;
+                    mystrcpy(students[j+1].name ,temp.name);
+                    students[j+1].score = temp.score;
+                }
+            }
+        }
+    }
+
 }
